@@ -1,10 +1,10 @@
 <template>
   <div>
-    <label v-for="condiment in bananaCondimentObj" v-bind:key="condiment">
+    <label v-for="(condiment,objKey) in bananaCondimentObj" v-bind:key="condiment">
       <input
         type="checkbox"
         name="everyCondiment"
-        v-bind:value="condiment"
+        v-bind:value="objKey"
         v-model="selectedCondiments"
       >
       {{condiment}}
@@ -18,7 +18,7 @@
         <li
         v-for="condiment in selectedCondiments"
         v-bind:key="condiment"
-        >{{condiment}}</li>
+        >{{bananaCondimentObj[condiment]}}</li>
       </ul>
     </li>
   </div>
@@ -31,7 +31,7 @@ export default {
     return {
       name: "Hello world",
       toggle: false,
-      selectedCondiments: ["巧克力醬"],
+      selectedCondiments: ["miso"],
       bananaCondimentObj: {
         chocolate: "巧克力醬",
         strawberry: "草莓醬",
