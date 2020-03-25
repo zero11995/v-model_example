@@ -31,7 +31,7 @@ export default {
     return {
       name: "Hello world",
       toggle: false,
-      selectedCondiments: [],
+      selectedCondiments: ["巧克力醬"],
       bananaCondimentObj: {
         chocolate: "巧克力醬",
         strawberry: "草莓醬",
